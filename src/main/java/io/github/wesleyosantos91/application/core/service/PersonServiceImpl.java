@@ -1,47 +1,41 @@
 package io.github.wesleyosantos91.application.core.service;
 
+import io.github.wesleyosantos91.application.core.domain.PageInfo;
 import io.github.wesleyosantos91.application.core.domain.Person;
-import io.github.wesleyosantos91.application.ports.PersonRepositoryPort;
-import io.github.wesleyosantos91.application.ports.PersonServicePort;
-
-import java.util.List;
-import java.util.Optional;
+import io.github.wesleyosantos91.application.ports.in.PersonServicePort;
+import io.github.wesleyosantos91.application.ports.out.PersonDatabasePort;
+import org.springframework.data.domain.Page;
 
 public class PersonServiceImpl implements PersonServicePort {
 
-    private final PersonRepositoryPort repositoryPort;
+    private final PersonDatabasePort personDatabasePort;
 
-    public PersonServiceImpl(PersonRepositoryPort repositoryPort) {
-        this.repositoryPort = repositoryPort;
+    public PersonServiceImpl(PersonDatabasePort personDatabasePort) {
+        this.personDatabasePort = personDatabasePort;
     }
 
     @Override
-    public List<Person> findAll() {
-        return repositoryPort.findAll();
+    public Page<Person> find(PageInfo pageInfo) {
+        return personDatabasePort.find(pageInfo);
     }
 
     @Override
-    public Person findById(Long id) {
-        return repositoryPort.findById(id).orElseThrow();
+    public Person getById(Long id) {
+        return personDatabasePort.findById(id).orElseThrow();
     }
 
     @Override
-    public Person exist(Long id) {
-        return repositoryPort.exist(id);
-    }
-
-    @Override
-    public Person save(Person person) {
-        return repositoryPort.save(person);
+    public Person create(Person person) {
+        return personDatabasePort.create(person);
     }
 
     @Override
     public Person update(Long id, Person person) {
-        return repositoryPort.update(id, person);
+        return personDatabasePort.update(id, person);
     }
 
     @Override
     public void delete(Long id) {
-        repositoryPort.delete(id);
+        personDatabasePort.delete(id);
     }
 }
