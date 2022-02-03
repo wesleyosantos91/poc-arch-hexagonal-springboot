@@ -32,16 +32,14 @@
 
 ## Tecnologias
 - Java 11
-- Spring Boot 2.2.6.RELEASE
+- Spring Boot 2.6.3
     - spring-boot-starter-web
     - spring-boot-starter-data-jpa
     - spring-boot-devtools
 - Flywaydb
 - Lombok
 - Mysql
-- Swagger
-    - springfox-swagger2
-    - springfox-swagger-ui
+- springdoc-openapi-ui
 - Tomcat (Embedded no Spring Boot)
 - Git
 
