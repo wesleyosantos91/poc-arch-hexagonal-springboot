@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: ms-person
+  datasource:
+    url: ${DATABASE_URL:jdbc:mysql://localhost:3306/person?allowPublicKeyRetrieval=true&useSSL=false}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:root}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database: MYSQL
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+    open-in-view: false
+  flyway:
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    locations: classpath:/db/migration
