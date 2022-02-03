@@ -21,8 +21,8 @@ public class PersonServiceImpl implements PersonServicePort {
     }
 
     @Override
-    public Optional<Person> findById(Long id) {
-        return repositoryPort.findById(id);
+    public Person findById(Long id) {
+        return repositoryPort.findById(id).orElseThrow();
     }
 
     @Override

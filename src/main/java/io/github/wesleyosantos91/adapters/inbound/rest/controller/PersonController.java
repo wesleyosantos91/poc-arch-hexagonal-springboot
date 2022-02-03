@@ -1,9 +1,7 @@
 package io.github.wesleyosantos91.adapters.inbound.rest.controller;
 
-import io.github.wesleyosantos91.adapters.inbound.rest.mapper.PersonHttpMapper;
 import io.github.wesleyosantos91.adapters.inbound.rest.request.PersonRequest;
 import io.github.wesleyosantos91.adapters.inbound.rest.response.PersonResponse;
-import io.github.wesleyosantos91.adapters.outbound.sql.mapper.PersonPersistenceMapper;
 import io.github.wesleyosantos91.application.ports.PersonServicePort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -37,6 +34,12 @@ public class PersonController {
 
         var person = personServicePort.save(INSTANCE.toDomain(request));
         return ResponseEntity.status(HttpStatus.CREATED).body(INSTANCE.toResponse(person));
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<PersonResponse> findByCode(@PathVariable Long id) {
+        var person = personServicePort.findById(id);
+        return ResponseEntity.ok().body(INSTANCE.toResponse(person));
     }
 
     @GetMapping(value ="/all")

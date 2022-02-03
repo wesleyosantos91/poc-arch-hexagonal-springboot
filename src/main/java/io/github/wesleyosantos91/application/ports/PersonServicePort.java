@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface PersonServicePort {
 
     List<Person> findAll();
-    Optional<Person> findById(Long id);
+    Person findById(Long id);
     Person exist(Long id);
     Person save(Person person);
     Person update(Long id, Person person);
