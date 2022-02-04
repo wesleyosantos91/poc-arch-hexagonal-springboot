@@ -32,7 +32,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
 
-        HttpStatus httpStatus = HttpStatus.UNPROCESSABLE_ENTITY;
         ValidationErrorResponse error = new ValidationErrorResponse();
         error.setTimestamp(Instant.now());
         error.setStatus(status.value());
