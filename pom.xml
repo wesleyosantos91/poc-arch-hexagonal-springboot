@@ -14,12 +14,13 @@
     <artifactId>poc-arch-hexagonal-springboot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>poc-arch-hexagonal-springboot</name>
+
     <description>poc-arch-hexagonal-springboot</description>
 
     <properties>
         <java.version>11</java.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
-        <springfox-swagger2.version>3.0.0</springfox-swagger2.version>
+        <springdoc-openapi-ui.version>1.6.5</springdoc-openapi-ui.version>
     </properties>
 
     <developers>
@@ -78,7 +79,7 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.6.5</version>
+            <version>${springdoc-openapi-ui.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
