@@ -1,4 +1,4 @@
-package io.github.wesleyosantos91.adapter.inbound.rest.event;
+package io.github.wesleyosantos91.adapter.inbound.rest.v1.event;
 
 import org.springframework.context.ApplicationEvent;
 

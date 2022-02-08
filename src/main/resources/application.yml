@@ -24,3 +24,6 @@ springdoc:
   api-docs:
     path: /swagger-ui.html
   packages-to-scan: io.github.wesleyosantos91.adapter.inbound.rest.controller
+server:
+  servlet:
+    context-path: /ms-person

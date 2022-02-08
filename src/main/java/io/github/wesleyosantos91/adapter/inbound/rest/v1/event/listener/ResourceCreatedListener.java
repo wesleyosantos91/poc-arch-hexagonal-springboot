@@ -1,6 +1,6 @@
-package io.github.wesleyosantos91.adapter.inbound.rest.event.listener;
+package io.github.wesleyosantos91.adapter.inbound.rest.v1.event.listener;
 
-import io.github.wesleyosantos91.adapter.inbound.rest.event.ResourceCreatedEvent;
+import io.github.wesleyosantos91.adapter.inbound.rest.v1.event.ResourceCreatedEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;

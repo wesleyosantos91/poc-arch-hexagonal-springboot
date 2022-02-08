@@ -1,7 +1,7 @@
-package io.github.wesleyosantos91.adapter.inbound.rest.mapper;
+package io.github.wesleyosantos91.adapter.inbound.rest.v1.mapper;
 
-import io.github.wesleyosantos91.adapter.inbound.rest.request.PersonRequest;
-import io.github.wesleyosantos91.adapter.inbound.rest.response.PersonResponse;
+import io.github.wesleyosantos91.adapter.inbound.rest.v1.request.PersonRequest;
+import io.github.wesleyosantos91.adapter.inbound.rest.v1.response.PersonResponse;
 import io.github.wesleyosantos91.application.core.domain.Person;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

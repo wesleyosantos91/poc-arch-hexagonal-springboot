@@ -1,4 +1,4 @@
-package io.github.wesleyosantos91.adapter.inbound.rest.response;
+package io.github.wesleyosantos91.adapter.inbound.rest.v1.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.Instant;
 
 @Getter
 @Setter
@@ -19,11 +18,11 @@ import java.time.LocalDate;
 @ToString
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class PersonResponse implements Serializable {
+public class ErrorResponse {
 
-    private Long id;
-    private String name;
-    private LocalDate dateOfBirth;
-    private String cpf;
-    private String email;
+    private Instant timestamp;
+    private Integer status;
+    private String error;
+    private String message;
+    private String path;
 }

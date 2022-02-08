@@ -1,7 +1,7 @@
-package io.github.wesleyosantos91.adapter.inbound.rest.exception;
+package io.github.wesleyosantos91.adapter.inbound.rest.v1.exception;
 
-import io.github.wesleyosantos91.adapter.inbound.rest.response.ErrorResponse;
-import io.github.wesleyosantos91.adapter.inbound.rest.response.ValidationErrorResponse;
+import io.github.wesleyosantos91.adapter.inbound.rest.v1.response.ErrorResponse;
+import io.github.wesleyosantos91.adapter.inbound.rest.v1.response.ValidationErrorResponse;
 import io.github.wesleyosantos91.application.core.exception.ResourceNotFoundException;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.context.MessageSource;
@@ -36,7 +36,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         error.setTimestamp(Instant.now());
         error.setStatus(status.value());
         error.setError("Validation exception");
-        error.setMessage(ExceptionUtils.getRootCauseMessage(ex));
+        error.setMessage("Validation failed");
         error.setPath(((ServletWebRequest)request).getRequest().getRequestURI());
 
         for (FieldError f : ex.getBindingResult().getFieldErrors()) {

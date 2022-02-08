@@ -1,4 +1,4 @@
-package io.github.wesleyosantos91.adapter.inbound.rest.response;
+package io.github.wesleyosantos91.adapter.inbound.rest.v1.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
