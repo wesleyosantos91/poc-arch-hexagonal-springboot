@@ -61,7 +61,7 @@ public class MysqlPersonDatabase implements PersonDatabasePort {
     @Override
     public Person update(Long id, Person person) {
         var personSaved = exist(id);
-        BeanUtils.copyProperties(person, personSaved);
+        BeanUtils.copyProperties(person, personSaved, "id");
         return INSTANCE.toDomain(repository.save(INSTANCE.toEntity(personSaved)));
 
     }

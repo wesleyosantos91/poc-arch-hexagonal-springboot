@@ -23,7 +23,7 @@ spring:
 springdoc:
   api-docs:
     path: /swagger-ui.html
-  packages-to-scan: io.github.wesleyosantos91.adapter.inbound.rest.controller
+  packages-to-scan: io.github.wesleyosantos91.adapter.inbound.rest.v1.controller
 server:
   servlet:
     context-path: /ms-person
