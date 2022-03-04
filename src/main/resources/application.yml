@@ -21,8 +21,8 @@ spring:
     password: ${spring.datasource.password}
     locations: classpath:/db/migration
 springdoc:
-  api-docs:
-    path: /swagger-ui.html
+#  api-docs:
+#    path: /swagger-ui.html
   packages-to-scan: io.github.wesleyosantos91.adapter.inbound.rest.v1.controller
 server:
   servlet:

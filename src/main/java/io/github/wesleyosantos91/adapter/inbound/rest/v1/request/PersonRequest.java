@@ -16,6 +16,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -29,12 +30,15 @@ public class PersonRequest implements Serializable {
 
     @Size(min = 10, max = 50)
     @NotBlank
-    String name;
+    private String name;
     @Past
-    LocalDate dateOfBirth;
+    private LocalDate dateOfBirth;
     @Size(min = 11, max = 11)
-    String cpf;
+    private String cpf;
     @Email
     @NotBlank
-    String email;
+    private String email;
+
+    private Map<String, String> parametros;
+
 }

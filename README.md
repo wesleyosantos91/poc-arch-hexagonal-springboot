@@ -56,5 +56,8 @@
 
 # Utilização
 
-## Swagger
-http://localhost:8080/ms-person/swagger-ui/index.html?configUrl=/ms-person/api-docs
+## OpenAPI - api-docs
+http://localhost:8080/ms-person/v3/api-docs
+
+## RedDoc documentação da API
+http://localhost:8080/ms-person/
